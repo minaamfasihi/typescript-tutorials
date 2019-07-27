@@ -1,0 +1,39 @@
+all var declarations move to the top of the function.
+var declaration has a functional scope.
+let declarations are not hoisted and are block-scoped.
+let variables cannot be redeclared. however, they can each be declared in separate blocks.
+const declarations are also not hoisted, are block-scoped and must be set mandatorily. 
+const values cannot be changed unless they point to an object in which case you can change the value of any attribute of
+object, however you cant reset the object ref to any other object.
+this points to the currently executing function. whereas arrow functions () retain the context of their parent.
+you can use literals, variables and even functions to assign default values to parameters. but if you dont pass actual values,
+and make use of the default values, the arguments object inside the function will have length 0.
+rest operator takes in a variable number of arguments, and make them into an array.
+let displayColors = function(message, ...colors) {
+    console.log(message)
+    console.log(colors)
+    console.log(arguments.length)
+
+    for (let i in colors) {
+        console.log(colors[i])
+    }
+}
+
+let message = "list of colors"
+displayColors(message, 'red'); // rest operator will make an array: colors = ['red']
+displayColors(message, 'red', 'blue'); // rest operator will make an array: colors = ['red', 'blue']
+displayColors(message, 'red', 'green', 'ser'); // rest operator will make an array: colors = ['red', 'green', 'ser']
+
+- object literals:
+if the key and value are same, you can simply omit the value. 
+let firstname = "munnu"
+
+string templates allow you to have single and double quotes in string.
+can also span multi-lines.
+
+like var's, functions are also hoisted.
+this is valid:
+foo();
+function foo() {}
+
+But classes are not hoisted. Although class IS a function.
