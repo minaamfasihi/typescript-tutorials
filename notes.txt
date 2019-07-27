@@ -37,3 +37,15 @@ foo();
 function foo() {}
 
 But classes are not hoisted. Although class IS a function.
+
+Inheritance is possible through the extends keyword.
+
+Child class that extends parent class, will call the parent class's ctor if it has no ctor of its own.
+If you need to have a child constructor, then you MUST have the super() call in the child ctor. Otherwise, it's an error.
+
+Sets:
+no duplicates, usually dont access a value, only check for presence.
+
+
+Symbol is a primitive type in ES6.
+
