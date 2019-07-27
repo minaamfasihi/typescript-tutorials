@@ -1,3 +1,13 @@
+Tooling:
+npm i -g typescript
+in vs code, press ctrl + shift + b. Click on configure task runner. select typescript with watch mode. this should
+create a tasks.json file.
+we need a config file. for that we do:
+tsc --init
+this creates a tsconfig.json file. change sourceMap under compilerOptions to true. add "outDir": "scripts/" below sourceMap.
+npm i -g lite-server
+lite-server
+
 all var declarations move to the top of the function.
 var declaration has a functional scope.
 let declarations are not hoisted and are block-scoped.
@@ -48,4 +58,7 @@ no duplicates, usually dont access a value, only check for presence.
 
 
 Symbol is a primitive type in ES6.
+
+further reading:
+promises, reflection, proxy in es6. and type definition in typescript.
 
