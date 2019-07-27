@@ -258,3 +258,72 @@ function createIterator(array) {
 }
 
 let myIterator = createIterator(iterable);
+console.log(myIterator.next())
+
+// Generators
+// ES6 generator is a function that can be paused, run some other code and continue where it left off.
+// with every execution, it hits the next yield point.
+
+/* 
+let myMap = new Map([
+    ["fname", "Chandler"],
+    ["lname", "Bing"]
+]);
+
+for (let value of myMap.values()) {
+  console.log(value);
+}
+
+for (let key of myMap.keys()) {
+  console.log(key)
+}
+
+for (let entry of myMap.entries()) {
+  console.log(`${entry[0]} -> ${entry[1]}`)
+}
+
+let person = {
+  fname: "Chandler",
+  lname: "Bing"
+};
+
+person[Symbol.iterator] = function() {
+  let properties = Object.keys(person);
+  let count = 0;
+  let isDone = false;
+  let next = () => {
+    if (count >= properties.length) {
+      isDone = true;
+    }
+    return { done: isDone, value: this[properties[count++]] };
+  }
+  return { next };
+}
+
+for (let p of person) {
+  console.log("person p: ", p);
+}
+*/
+
+function *createGenerator() {
+    yield 1;
+    console.log("After 1st yield")
+    yield 2;
+}
+
+let myGen = createGenerator();
+console.log("mygen next:", myGen.next()); // returns an object. object { value: 1, done: false }
+console.log("mygen next:", myGen.next()); // returns an object. object { value: 2, done: false }
+console.log("mygen next:", myGen.next()); // returns an object. object { value: undefined, done: true }
+
+// Refactored iterator method for object written above.
+// person[Symbol.iterator] = function*() {
+//     let properties = Object.keys(person);
+//     for (let t of properties) {
+//         yield this[t];
+//     }
+// };
+
+for (let p of person) {
+    console.log(p)
+}
